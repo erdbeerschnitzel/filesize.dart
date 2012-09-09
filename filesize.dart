@@ -1,7 +1,10 @@
 #library("filesize");
 
-
-String filesize(int size, [int round = 2, bool decimal = false]){
+/**
+ * 
+ * returns a human readable string representing the size
+ * */
+String filesize(size, [int round = 2, bool decimal = false]){
   
   int divider = 1024; // default
   
