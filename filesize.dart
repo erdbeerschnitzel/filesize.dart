@@ -1,46 +1,27 @@
 #library("filesize");
 
-void main(){
-  
-  print(filesize(10));
-  
-  print(filesize(1025));
-  
-  print(filesize(1024));
-  
-  print(filesize(14365320));
-  
-  print(filesize(1024*1024));
-  
-  print(filesize(664365320));
-  
-  print(filesize(1024*1024*1024));
-  
-  print(filesize(43514365320));
-  
-  print(filesize(1024*1024*1024*1024));
 
-  print(filesize(4324324232343));
-
-}
-
-String filesize(int size, [int round = 2]){
+String filesize(int size, [int round = 2, bool decimal = false]){
   
-  if(size < 1024) return "$size B";
+  int divider = 1024; // default
   
-  if(size < 1024*1024 && size % 1024 == 0) return "${(size/1024).toStringAsFixed(0)} KB";
+  if(decimal) divider = 1000;
   
-  if(size < 1024*1024) return "${(size/1024).toStringAsFixed(round)} KB"; 
+  if(size < divider) return "$size B";
   
-  if(size < 1024*1024*1024 && size % 1024 == 0) return "${(size/(1024*1024)).toStringAsFixed(0)} MB";
+  if(size < divider*divider && size % divider == 0) return "${(size/divider).toStringAsFixed(0)} KB";
+  
+  if(size < divider*divider) return "${(size/divider).toStringAsFixed(round)} KB"; 
+  
+  if(size < divider*divider*divider && size % divider == 0) return "${(size/(divider*divider)).toStringAsFixed(0)} MB";
 
-  if(size < 1024*1024*1024) return "${(size/1024/1024).toStringAsFixed(round)} MB"; 
+  if(size < divider*divider*divider) return "${(size/divider/divider).toStringAsFixed(round)} MB"; 
   
-  if(size < 1024*1024*1024*1024 && size % 1024 == 0) return "${(size/(1024*1024*1024)).toStringAsFixed(0)} GB";
+  if(size < divider*divider*divider*divider && size % divider == 0) return "${(size/(divider*divider*divider)).toStringAsFixed(0)} GB";
 
-  if(size < 1024*1024*1024*1024) return "${(size/1024/1024/1024).toStringAsFixed(round)} GB"; 
+  if(size < divider*divider*divider*divider) return "${(size/divider/divider/divider).toStringAsFixed(round)} GB"; 
 
-  if(size % 1024 == 0)  return "${(size/1024/1024/1024/1024).toStringAsFixed(0)} TB" ;
-  else return "${(size/1024/1024/1024/1024).toStringAsFixed(round)} TB";
+  if(size % divider == 0)  return "${(size/divider/divider/divider/divider).toStringAsFixed(0)} TB" ;
+  else return "${(size/divider/divider/divider/divider).toStringAsFixed(round)} TB";
 
 }
