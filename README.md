@@ -5,6 +5,9 @@ micro library that provides an easy way to get human readable file size strings
 
 ## Features
 
+- size can be passed as number or as string
+- optional parameter to specify numbers after comma/point
+- optional parameter to use the decimal system for calculation
 - Petabyte support :)
 
 ## Examples
