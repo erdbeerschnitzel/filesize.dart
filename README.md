@@ -8,7 +8,7 @@ micro library that provides an easy way to get human readable file size strings
 - size can be passed as number or as string
 - optional parameter to specify numbers after comma/point
 - optional parameter to use the decimal system for calculation
-- Petabyte support :)
+- Petabyte support :D
 
 ## Examples
 
@@ -41,6 +41,3 @@ filesize.dart is inspired by [filesize.js](https://github.com/avoidwork/filesize
 
 filesize.dart is licensed under [BSD-3](http://www.opensource.org/licenses/BSD-3-Clause "BSD-3")
 
-#### Copyright
-
-Copyright (c) 2012, erdbeerschnitzel
