@@ -1,12 +1,21 @@
 #library("filesize");
+#import("dart:math");
 
 /**
+ * method returns a human readable string representing a file size
  * 
- * returns a human readable string representing the size
- * */
+ * size can be passed as number or as string
+ * 
+ * the optional parameter 'count' specifies the number of numbers after comma/point (default is 2)
+ * 
+ * the optional boolean parameter 'decimal' specifies if the decimal system should be used, e.g. 1KB = 1000B (default is false)
+ *
+ *  */
 String filesize(size, [int round = 2, bool decimal = false]){
   
-  int divider = 1024; // default
+  int divider = 1024;
+
+  size = parseInt(size.toString());
   
   if(decimal) divider = 1000;
   

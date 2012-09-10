@@ -14,7 +14,7 @@ filesize(1212312421412412);       // "1102.59TB"
 
 ## Information
 
-filesize.dart is inspired by filesize.js https://github.com/avoidwork/filesize.js
+filesize.dart is inspired by [filesize.js](https://github.com/avoidwork/filesize.js "filesize.js")
 
 #### License
 

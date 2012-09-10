@@ -1,9 +1,10 @@
-
 #import("./../filesize.dart");
 
 void main(){
   
   int divider = 1024;
+  
+  print(filesize("1025"));
   
   print(filesize(10));
   
@@ -14,6 +15,8 @@ void main(){
   print(filesize(14365320));
   
   print(filesize(divider*divider));
+  
+  print(filesize("${divider*divider}"));
   
   print(filesize(664365320));
   
