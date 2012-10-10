@@ -1,4 +1,4 @@
-#import("./../filesize.dart");
+#import("./../lib/filesize.dart");
 
 void main(){
   
